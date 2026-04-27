@@ -1,413 +1,355 @@
-```html
 <!DOCTYPE html>
-<html lang="uk" class="scroll-smooth">
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Комерційна пропозиція | Монтаж вентиляційних систем</title>
-    
-    <!-- Tailwind CSS -->
+    <title>Комерційна пропозиція - Вентиляція спортивного залу ДонДУВС</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                    colors: {
-                        brand: {
-                            50: '#f0f9ff',
-                            100: '#e0f2fe',
-                            500: '#0ea5e9',
-                            600: '#0284c7',
-                            900: '#0f172a',
-                            950: '#020617',
-                        }
-                    }
-                }
-            }
-        }
-    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        /* Custom scrollbar for table */
-        .table-container::-webkit-scrollbar {
-            height: 8px;
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap');
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
         }
-        .table-container::-webkit-scrollbar-track {
-            background: #f1f1f1; 
+
+        .gradient-text {
+            background: linear-gradient(90deg, #1d4ed8, #0ea5e9);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
-        .table-container::-webkit-scrollbar-thumb {
-            background: #cbd5e1; 
-            border-radius: 4px;
-        }
-        .table-container::-webkit-scrollbar-thumb:hover {
-            background: #94a3b8; 
-        }
-        .glass-panel {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-top: 1px solid rgba(255, 255, 255, 0.5);
+
+        /* Стилі для ідеального друку у PDF / на папері */
+        @media print {
+            body { background-color: white; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .no-print { display: none !important; }
+            .print-break-inside-avoid { break-inside: avoid; page-break-inside: avoid; }
+            .print-page-break-before { page-break-before: always; }
+            .shadow-lg, .shadow-md, .shadow-xl, .shadow-sm { box-shadow: none !important; }
+            .container { max-width: 100% !important; padding: 0 !important; margin: 0 !important; border: none !important; }
+            /* Налаштування банера для друку */
+            .bg-slate-900 { background-color: #1e293b !important; color: white !important; }
+            .print-border { border: 1px solid #e2e8f0; }
         }
     </style>
 </head>
-<body class="font-sans text-slate-800 bg-slate-50 antialiased selection:bg-brand-500 selection:text-white">
+<body class="antialiased pb-20">
 
-    <!-- Hero Section -->
-    <header class="relative bg-brand-950 text-white overflow-hidden py-20 lg:py-32">
-        <div class="absolute inset-0 opacity-10 bg-[url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=2071&auto=format&fit=crop')] bg-cover bg-center"></div>
-        <div class="absolute inset-0 bg-gradient-to-r from-brand-950 via-brand-900/90 to-transparent"></div>
+    <div class="container mx-auto max-w-5xl bg-white shadow-xl min-h-screen my-8 print:my-0 print:shadow-none">
         
-        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/20 text-brand-100 border border-brand-500/30 text-sm font-medium mb-6">
-                <i data-lucide="wind" class="w-4 h-4"></i>
-                <span>Повітрообробна компанія</span>
+        <header class="flex flex-col md:flex-row justify-between items-center p-8 border-b border-gray-200">
+            <div class="flex items-center gap-4 mb-4 md:mb-0">
+                <div class="flex flex-col">
+                    <div class="flex items-end gap-1">
+                        <span class="text-4xl font-black text-slate-800 tracking-tight leading-none">ПОК</span>
+                        <span class="text-2xl font-bold text-slate-700 tracking-tight lowercase leading-none mb-0.5">вітряки</span>
+                    </div>
+                    <span class="text-[10px] md:text-xs font-bold text-gray-500 uppercase tracking-widest border-t-2 border-slate-200 pt-1 mt-1">Повітрообробна компанія</span>
+                </div>
             </div>
+            <div class="text-right text-gray-700">
+                <h2 class="text-sm text-gray-500 uppercase tracking-widest font-semibold mb-2">Комерційна пропозиція</h2>
+                <p class="text-sm font-medium"><i class="fas fa-calendar-alt text-blue-500 w-5"></i> 23 березня</p>
+                <p class="text-sm font-medium"><i class="fas fa-building text-blue-500 w-5"></i> Замовник: ДонДУВС</p>
+            </div>
+        </header>
+
+        <div class="relative bg-slate-900 text-white p-10 overflow-hidden print-break-inside-avoid print:!bg-slate-900 print:!text-white">
+            <div class="absolute inset-0 opacity-25 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1555597673-b21d5c935865?q=80&w=1470&auto=format&fit=crop');"></div>
+            <div class="relative z-10 flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="md:w-3/5">
+                    <h1 class="text-3xl md:text-4xl font-bold mb-3 leading-tight">Проєктне рішення по системі вентиляції</h1>
+                    <h2 class="text-xl md:text-2xl text-blue-400 font-semibold mb-4">Спортивний зал ДонДУВС</h2>
+                    <p class="text-lg text-slate-300 max-w-2xl">Створення ідеального мікроклімату для ефективних тренувань, забезпечення спортсменів свіжим киснем та надійне відведення вологи і CO₂.</p>
+                </div>
+                <div class="md:w-2/5 w-full bg-blue-600/40 border border-blue-400/50 p-6 rounded-2xl backdrop-blur-sm text-center shadow-lg transform rotate-1 print:rotate-0">
+                    <i class="fas fa-quote-left text-3xl text-blue-300 opacity-50 mb-2"></i>
+                    <p class="text-2xl md:text-3xl font-extrabold italic text-white tracking-wide leading-snug">
+                        Немає нічого неможливого,<br><span class="text-yellow-400">стань чемпіоном</span><br><span class="text-lg md:text-xl text-blue-200 font-bold mt-2 block">з якісною вентиляцією</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <section class="p-8 md:p-12">
             
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 leading-tight">
-                Комерційна пропозиція <br>
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-500 to-cyan-400">на монтаж системи вентиляції</span>
-            </h1>
-            
-            <div class="max-w-3xl text-lg text-slate-300 space-y-4 border-l-4 border-brand-500 pl-6 mt-8">
-                <p><strong>Шановний замовник!</strong> Масштаб об'єкту вимагає особливого підходу до монтажних робіт, ми пропонуємо виконати даний спектр робіт під ключ і за попередньою версією кошториса.</p>
-                <p>Об'єм робіт буде динамічний, але вартість залишається в межах даної комерційної пропозиції.</p>
-                <p>Ми беремо на себе повну відповідальність за фінальний етап реалізації вашого проєкту: від професійного монтажу обладнання до виведення системи на проєктні потужності. Наша компанія надає офіційну гарантію на весь обсяг виконаних робіт, забезпечуючи надійну експлуатацію дороговартісного обладнання.</p>
+            <div class="mb-12 print-break-inside-avoid">
+                <h3 class="text-2xl font-bold mb-6 gradient-text border-b pb-2">1. Розрахунок необхідного повітрообміну</h3>
+                <p class="text-gray-700 leading-relaxed mb-6 text-justify">
+                    Під час інтенсивних фізичних навантажень організм людини споживає значно більше кисню та активно виділяє вуглекислий газ і вологу. Згідно з санітарними нормами та європейськими стандартами для спортивних закладів, необхідно забезпечити подачу свіжого повітря на рівні <strong>70 м³/год на одного спортсмена</strong> при інтенсивному навантаженні.
+                </p>
+                
+                <div class="bg-gray-50 border border-gray-200 rounded-2xl p-6 md:p-8">
+                    <div class="grid grid-cols-1 md:grid-cols-5 gap-4 items-center text-center">
+                        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 md:col-span-2">
+                            <div class="text-5xl font-extrabold text-blue-600 mb-2">30</div>
+                            <div class="text-gray-600 text-sm font-semibold uppercase tracking-wide">Спортсменів<br>в залі (макс.)</div>
+                        </div>
+                        
+                        <div class="text-3xl text-gray-400 hidden md:block md:col-span-1"><i class="fas fa-times"></i></div>
+                        <div class="text-3xl text-gray-400 block md:hidden"><i class="fas fa-times"></i></div>
+                        
+                        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 md:col-span-2">
+                            <div class="text-5xl font-extrabold text-blue-600 mb-2">70 <span class="text-xl">м³/год</span></div>
+                            <div class="text-gray-600 text-sm font-semibold uppercase tracking-wide">Норма повітря<br>на 1 людину</div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 bg-blue-600 text-white rounded-xl p-6 text-center shadow-md print:bg-blue-600 print:text-white">
+                        <div class="text-lg text-blue-100 uppercase tracking-widest font-semibold mb-1">Максимальна продуктивність системи</div>
+                        <div class="text-4xl md:text-5xl font-extrabold">2100 м³/год</div>
+                    </div>
+                </div>
+                
+                <p class="text-gray-700 leading-relaxed mt-6 text-justify">
+                    Для реалізації цього завдання ми пропонуємо встановлення сучасної припливно-витяжної установки з рекуперацією тепла <strong>Aerostar EcoStar 1500 EC X+Bypass NR</strong> від провідного українського виробника.
+                </p>
             </div>
-        </div>
-    </header>
 
-    <!-- Key Advantages Section -->
-    <section class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Наші ключові переваги</h2>
-                <div class="w-24 h-1 bg-brand-500 mx-auto mt-6 rounded-full"></div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Advantage 1 -->
-                <div class="bg-slate-50 rounded-2xl p-8 border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
-                    <div class="w-14 h-14 bg-brand-100 rounded-xl flex items-center justify-center text-brand-600 mb-6">
-                        <i data-lucide="shield-check" class="w-7 h-7"></i>
+            <div class="bg-slate-50 rounded-2xl p-8 mb-12 border border-slate-200 print-break-inside-avoid">
+                <h3 class="text-xl font-bold mb-6 text-center text-slate-800">2. Чому рекуперація критично необхідна для спортивного залу?</h3>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-red-400">
+                        <h4 class="font-bold text-lg mb-2 text-red-600"><i class="fas fa-exclamation-triangle mr-2"></i> Звичайні вентилятори</h4>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            Просто викидають вже нагріте повітря з приміщення на вулицю. А припливні системи затягують холодне зимове повітря, яке доводиться нагрівати потужними електричними калориферами. Гроші буквально "вилітають у трубу".
+                        </p>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Безпека та охорона праці на висоті</h3>
-                    <p class="text-slate-600 leading-relaxed">Наші фахівці забезпечені всіма необхідними засобами індивідуального захисту та страхувальними елементами для безпечного виконання робіт на висоті. Ми суворо дотримуємося регламентів техніки безпеки, що виключає ризики травматизму та зупинки робіт на об'єкті. Плюс дозвільні документи на висотні роботи.</p>
-                </div>
-
-                <!-- Advantage 2 -->
-                <div class="bg-slate-50 rounded-2xl p-8 border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
-                    <div class="w-14 h-14 bg-brand-100 rounded-xl flex items-center justify-center text-brand-600 mb-6">
-                        <i data-lucide="users" class="w-7 h-7"></i>
+                    <div class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-green-500">
+                        <h4 class="font-bold text-lg mb-2 text-green-600"><i class="fas fa-check-circle mr-2"></i> Система з рекуперацією</h4>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            Оснащена протиточним рекуператором, який забирає тепло від відпрацьованого повітря і передає його свіжому повітрю з вулиці. <strong>Це дозволяє економити до 60% електроенергії</strong> на догріві повітря в холодну пору року.
+                        </p>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Броньований персонал</h3>
-                    <p class="text-slate-600 leading-relaxed">Ми гарантуємо безперервність робочого процесу. Весь інженерно-технічний склад та ключові монтажні бригади нашої компанії мають офіційне бронювання. Ваші терміни здачі об'єкта захищені від зовнішніх мобілізаційних ризиків.</p>
-                </div>
-
-                <!-- Advantage 3 -->
-                <div class="bg-slate-50 rounded-2xl p-8 border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
-                    <div class="w-14 h-14 bg-brand-100 rounded-xl flex items-center justify-center text-brand-600 mb-6">
-                        <i data-lucide="cuboid" class="w-7 h-7"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">ВІМ-інтеграція (Revit 3D)</h3>
-                    <p class="text-slate-600 leading-relaxed">Для забезпечення точності ми розробляємо 3D-візуалізацію вузлів підключення. Це дозволяє нам детально погодити кожен метр траси та уникнути колізій з уже існуючими комунікаціями на об'єкті.</p>
-                </div>
-
-                <!-- Advantage 4 -->
-                <div class="bg-slate-50 rounded-2xl p-8 border border-slate-100 shadow-sm hover:shadow-md transition-shadow lg:col-span-1 md:col-span-2">
-                    <div class="w-14 h-14 bg-brand-100 rounded-xl flex items-center justify-center text-brand-600 mb-6">
-                        <i data-lucide="search" class="w-7 h-7"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Аудит матеріалів</h3>
-                    <p class="text-slate-600 leading-relaxed">Аудит та використання вже існуючих матеріалів на об'єкті (залишок з попереднього етапу підготовки та виконання).</p>
-                </div>
-
-                <!-- Advantage 5 -->
-                <div class="bg-slate-50 rounded-2xl p-8 border border-slate-100 shadow-sm hover:shadow-md transition-shadow lg:col-span-2 md:col-span-2">
-                    <div class="w-14 h-14 bg-brand-100 rounded-xl flex items-center justify-center text-brand-600 mb-6">
-                        <i data-lucide="settings-2" class="w-7 h-7"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Пусконаладжувальні роботи</h3>
-                    <p class="text-slate-600 leading-relaxed">Ми перетворюємо масив обладнання та мереж на інтелектуальну систему управління мікрокліматом. Для об'єкта такого класу ПНР від нашої компанії - це не просто запуск двигунів, а ювелірне налаштування алгоритмів автоматики Aerostar для роботи в агресивних умовах високої вологості.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Team Section -->
-    <section class="py-20 bg-slate-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-12">
-                <div>
-                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Наша команда</h2>
-                    <div class="w-24 h-1 bg-brand-500 mt-6 rounded-full"></div>
-                </div>
-                <div class="mt-6 md:mt-0">
-                    <a href="https://khromenkoyegor-star.github.io/ReferenceLetter/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 bg-white hover:bg-slate-50 hover:text-brand-600 rounded-lg shadow-sm border border-slate-200 text-sm font-medium text-slate-600 transition-colors cursor-pointer group">
-                        <i data-lucide="external-link" class="w-4 h-4 text-brand-500 group-hover:text-brand-600 transition-colors"></i>
-                        <span>Референс лист з об'єктами (окремий архів)</span>
-                    </a>
                 </div>
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                <!-- Team Member 1 -->
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 flex flex-col sm:flex-row gap-4 items-start">
-                    <div class="w-12 h-12 bg-slate-800 text-white rounded-full flex items-center justify-center flex-shrink-0 font-bold text-xl">1</div>
-                    <div>
-                        <h4 class="text-lg font-bold text-slate-900">Керівник робіт Хроменко Єгор</h4>
-                        <div class="inline-flex mt-2 mb-3 items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
-                            Броньований
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 mb-12 text-white shadow-lg print-break-inside-avoid print:!bg-slate-800 print:!text-white">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="bg-yellow-400 text-slate-900 p-3 rounded-full">
+                        <i class="fas fa-bolt text-xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold">Наочний розрахунок: Економія на електронагріві</h3>
+                </div>
+                
+                <p class="text-slate-200 mb-6 text-lg">
+                    Уявімо стандартну ситуацію взимку: на вулиці <strong>-5°C</strong>, а для тренувань у спортивному залі потрібно постійно подавати <strong>2100 м³/год</strong> свіжого повітря, підігрітого до <strong>+20°C</strong>.
+                </p>
+
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div class="bg-slate-800 p-6 rounded-xl border border-slate-600">
+                        <h4 class="text-red-400 font-bold text-lg mb-3 flex items-center gap-2">
+                            <i class="fas fa-times-circle"></i> Звичайна приточна система
+                        </h4>
+                        <p class="text-sm text-slate-300 mb-4 h-10">Доведеться нагрівати вуличне повітря "з нуля" електричним калорифером.</p>
+                        <div class="bg-slate-900/50 p-4 rounded-lg border border-slate-700">
+                            <span class="block text-xs text-slate-400 uppercase tracking-wide mb-1">Потрібна потужність нагрівача:</span>
+                            <span class="text-3xl font-bold text-red-400">~ 18.4 кВт</span>
+                            <div class="mt-3 pt-3 border-t border-slate-700">
+                                <span class="block text-sm text-slate-300">Витрати за 10 год роботи:</span>
+                                <strong class="text-lg text-white">184 кВт·год щодня</strong>
+                            </div>
                         </div>
-                        <p class="text-sm text-slate-600">Освіта: інженер теплоенергетик (магістр). Досвід роботи у сфері вентиляції з 2021 до 2024 інженер-проєктувальник у ТОВ майстерклімат (Черкаси), 2024-наші дні власна підприємницька діяльність.</p>
+                    </div>
+
+                    <div class="bg-blue-900/40 p-6 rounded-xl border border-blue-500/50">
+                        <h4 class="text-green-400 font-bold text-lg mb-3 flex items-center gap-2">
+                            <i class="fas fa-check-circle"></i> Установка Aerostar з рекуператором
+                        </h4>
+                        <p class="text-sm text-slate-300 mb-4 h-10">Рекуператор безкоштовно повертає тепло з повітря, що викидається (ККД ~60-75%).</p>
+                        <div class="bg-slate-900/50 p-4 rounded-lg border border-slate-700">
+                            <span class="block text-xs text-slate-400 uppercase tracking-wide mb-1">Потрібна потужність нагрівача:</span>
+                            <span class="text-3xl font-bold text-green-400">лише ~ 5 кВт</span>
+                            <div class="mt-3 pt-3 border-t border-slate-700">
+                                <span class="block text-sm text-slate-300">Рекуператор безкоштовно генерує:</span>
+                                <strong class="text-lg text-yellow-400">13.4 кВт тепла щогодини!</strong>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Team Member 2 -->
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 flex flex-col sm:flex-row gap-4 items-start">
-                    <div class="w-12 h-12 bg-slate-100 text-slate-500 rounded-full flex items-center justify-center flex-shrink-0 font-bold text-xl border border-slate-200">2</div>
-                    <div>
-                        <h4 class="text-lg font-bold text-slate-900">Іванченко Ярослав</h4>
-                        <div class="inline-flex mt-2 mb-3 items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
-                            Виключений з ВО (Основна команда)
-                        </div>
-                        <p class="text-sm text-slate-600">Бригадир, монтажник вентиляції.</p>
-                    </div>
+                <div class="text-center p-5 bg-blue-600 rounded-xl text-white font-semibold text-lg print:!bg-blue-600 print:!text-white print:border-none shadow-inner flex flex-col items-center gap-2">
+                    <div><i class="fas fa-info-circle mr-2 text-xl text-yellow-300"></i> Висновок: У пікові морози рекуператор заощаджує близько 134 кВт·год електроенергії щодня!</div>
                 </div>
 
-                <!-- Team Member 3 -->
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 flex flex-col sm:flex-row gap-4 items-start">
-                    <div class="w-12 h-12 bg-slate-100 text-slate-500 rounded-full flex items-center justify-center flex-shrink-0 font-bold text-xl border border-slate-200">3</div>
-                    <div>
-                        <h4 class="text-lg font-bold text-slate-900">Пархоменко Дмитро</h4>
-                        <div class="inline-flex mt-2 mb-3 items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
-                            Виключений з ВО, наявне УБД (Основна команда)
-                        </div>
-                        <p class="text-sm text-slate-600">Монтажник вентиляції.</p>
-                    </div>
-                </div>
+                <div class="mt-8 bg-white text-gray-800 rounded-xl p-6 border border-gray-200 shadow-md print:bg-white print:border-gray-300">
+                    <h4 class="text-xl font-bold mb-4 border-b pb-3 flex items-center gap-2 text-gray-900">
+                        <i class="fas fa-chart-bar text-blue-600"></i> Реальний фінансовий розрахунок за рік
+                    </h4>
+                    <p class="text-sm text-gray-600 mb-6">
+                        Ми проаналізували архів реальних погодних даних за 2024 рік та прорахували фактичне енергоспоживання для вашого об'єкту. В розрахунку використано комерційний тариф <strong>8.50 грн за 1 кВт·год</strong>.
+                    </p>
 
-                <!-- Team Member 4 -->
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 flex flex-col sm:flex-row gap-4 items-start">
-                    <div class="w-12 h-12 bg-slate-100 text-slate-500 rounded-full flex items-center justify-center flex-shrink-0 font-bold text-xl border border-slate-200">4</div>
-                    <div>
-                        <h4 class="text-lg font-bold text-slate-900">Вдовенко Микола</h4>
-                        <div class="inline-flex mt-2 mb-3 items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
-                            Броньований (Резервна команда)
+                    <div class="grid md:grid-cols-[1fr_auto_1fr] gap-4 items-center mb-6">
+                        <div class="bg-red-50 p-5 rounded-lg border border-red-100 text-center">
+                            <div class="text-red-500 mb-2"><i class="fas fa-fire-alt text-2xl"></i></div>
+                            <h5 class="font-bold text-gray-800 mb-1">Звичайний нагрівач</h5>
+                            <div class="text-sm text-gray-500 mb-2">17 334 кВт·год / рік</div>
+                            <div class="text-xl font-black text-red-600">147 339 грн</div>
                         </div>
-                        <p class="text-sm text-slate-600">Провідний інженер ЧТКЕ, монтажник вентиляції.</p>
-                    </div>
-                </div>
 
-                <!-- Team Member 5 -->
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 flex flex-col sm:flex-row gap-4 items-start">
-                    <div class="w-12 h-12 bg-slate-100 text-slate-500 rounded-full flex items-center justify-center flex-shrink-0 font-bold text-xl border border-slate-200">5</div>
-                    <div>
-                        <h4 class="text-lg font-bold text-slate-900">Коваленко Євгеній</h4>
-                        <div class="inline-flex mt-2 mb-3 items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-orange-100 text-orange-800">
-                            Підлягає призову (Резервна команда)
-                        </div>
-                        <p class="text-sm text-slate-600">Електрик, КВПіА.</p>
-                    </div>
-                </div>
+                        <div class="hidden md:flex justify-center text-gray-400 font-bold">VS</div>
 
-                <!-- Team Member 6 -->
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 flex flex-col sm:flex-row gap-4 items-start">
-                    <div class="w-12 h-12 bg-slate-100 text-slate-500 rounded-full flex items-center justify-center flex-shrink-0 font-bold text-xl border border-slate-200">6</div>
-                    <div>
-                        <h4 class="text-lg font-bold text-slate-900">Дувінський Олександр</h4>
-                        <div class="inline-flex mt-2 mb-3 items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
-                            Виключений за віком (Резервна команда)
+                        <div class="bg-green-50 p-5 rounded-lg border border-green-100 text-center">
+                            <div class="text-green-500 mb-2"><i class="fas fa-leaf text-2xl"></i></div>
+                            <h5 class="font-bold text-gray-800 mb-1">Система з рекуператором</h5>
+                            <div class="text-sm text-gray-500 mb-2">4 814 кВт·год / рік</div>
+                            <div class="text-xl font-black text-green-600">40 919 грн</div>
                         </div>
-                        <p class="text-sm text-slate-600">Електрозварювальник.</p>
                     </div>
-                </div>
 
-                <!-- Team Member 7 -->
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 flex flex-col sm:flex-row gap-4 items-start md:col-span-1 lg:col-span-2">
-                    <div class="w-12 h-12 bg-slate-100 text-slate-500 rounded-full flex items-center justify-center flex-shrink-0 font-bold text-xl border border-slate-200">7</div>
-                    <div>
-                        <h4 class="text-lg font-bold text-slate-900">Валерій Внуков</h4>
-                        <div class="inline-flex mt-2 mb-3 items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
-                            Відстрочка
+                    <div class="bg-gradient-to-r from-green-500 to-emerald-600 rounded-xl p-5 text-center text-white shadow-md print:!bg-green-100 print:!text-green-900 print:border print:border-green-300">
+                        <div class="uppercase tracking-widest text-green-100 text-xs font-bold mb-1 print:!text-green-700">Чиста фінансова економія:</div>
+                        <div class="text-3xl font-extrabold flex items-center justify-center gap-3">
+                            <i class="fas fa-wallet"></i> 106 420 грн <span class="text-lg font-medium">/ сезон</span>
                         </div>
-                        <p class="text-sm text-slate-600">Промисловий альпінізм, герметизація отворів.</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Estimate Table Section -->
-    <section class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Кошторис</h2>
-                <div class="w-24 h-1 bg-brand-500 mx-auto mt-6 rounded-full"></div>
-                <p class="mt-4 text-slate-600 max-w-2xl mx-auto">Детальний розрахунок вартості обладнання, матеріалів та послуг.</p>
+            <div class="grid md:grid-cols-12 gap-10 items-center mb-12 print-page-break-before print:pt-8 print-break-inside-avoid">
+                <div class="md:col-span-5">
+                    <div class="bg-white rounded-xl p-5 border border-gray-200 text-center shadow-sm">
+                         <div class="flex flex-col gap-4 mb-4">
+                             <img src="1.png" alt="" class="w-full h-auto rounded-lg shadow border border-gray-100 object-cover" onerror="this.onerror=null; this.src='https://placehold.co/600x400/f8fafc/1e293b?text=Фото+1\\n(Додайте+файл+photo1.png)';">
+                             <img src="2.png" alt="" class="w-full h-auto rounded-lg shadow border border-gray-100 object-cover" onerror="this.onerror=null; this.src='https://placehold.co/600x400/f8fafc/1e293b?text=Фото+2\\n(Додайте+файл+photo2.png)';">
+                         </div>
+                         <span class="inline-block bg-blue-100 text-blue-800 text-xs px-4 py-1.5 rounded-full font-bold uppercase tracking-wide">Aerostar EcoStar 1500 EC X+Bypass NR</span>
+                    </div>
+                </div>
+                <div class="md:col-span-7">
+                    <h3 class="text-2xl font-bold mb-6 gradient-text border-b pb-2">3. Ключові технології установки Aerostar</h3>
+                    <ul class="space-y-5 text-gray-700">
+                        <li class="flex items-start gap-4">
+                            <div class="bg-green-100 p-3 rounded-full text-green-600 shadow-sm"><i class="fas fa-leaf fa-fw text-lg"></i></div>
+                            <div class="mt-1">
+                                <strong class="block text-gray-900 text-lg mb-1">Високоефективний рекуператор</strong>
+                                <span class="text-sm leading-relaxed">Пластинчастий теплообмінник перехресного потоку зберігає до 75% тепла від витяжного повітря, суттєво знижуючи витрати на опалення залу.</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="bg-yellow-100 p-3 rounded-full text-yellow-600 shadow-sm"><i class="fas fa-fan fa-fw text-lg"></i></div>
+                            <div class="mt-1">
+                                <strong class="block text-gray-900 text-lg mb-1">Енергозберігаючі ЕС-двигуни</strong>
+                                <span class="text-sm leading-relaxed">Забезпечують точне регулювання продуктивності, споживають мінімум електроенергії та вирізняються низьким рівнем шуму (що дуже важливо для комфорту).</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="bg-blue-100 p-3 rounded-full text-blue-500 shadow-sm"><i class="fas fa-snowflake fa-fw text-lg"></i></div>
+                            <div class="mt-1">
+                                <strong class="block text-gray-900 text-lg mb-1">Вбудований літній Байпас (Bypass)</strong>
+                                <span class="text-sm leading-relaxed">Система оснащена спеціальним каналом з електроприводом для подачі свіжого прохолодного повітря в обхід рекуператора (режим Free Cooling) в теплу пору.</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="bg-purple-100 p-3 rounded-full text-purple-600 shadow-sm"><i class="fas fa-microchip fa-fw text-lg"></i></div>
+                            <div class="mt-1">
+                                <strong class="block text-gray-900 text-lg mb-1">Автоматика Plug&Play та ізоляція корпусу</strong>
+                                <span class="text-sm leading-relaxed">Корпус із сендвіч-панелей гарантує збереження тепла і тиху роботу. Повноцінна вбудована автоматика дозволяє легко налаштовувати режими роботи системи.</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </div>
 
-            <div class="bg-white border border-slate-200 rounded-2xl shadow-xl overflow-hidden">
-                <div class="table-container overflow-x-auto">
-                    <table class="w-full text-left border-collapse">
+            <div class="print-break-inside-avoid mt-8">
+                <h3 class="text-2xl font-bold mb-6 gradient-text border-b pb-2 flex items-center justify-between">
+                    <span>4. Специфікація та кошторис (без вартості монтажних робіт)</span>
+                    <i class="fas fa-calculator text-gray-300"></i>
+                </h3>
+                
+                <div class="overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
+                    <table class="w-full text-left border-collapse text-sm">
                         <thead>
-                            <tr class="bg-slate-900 text-white">
-                                <th class="py-4 px-6 font-semibold text-sm w-16 text-center border-b border-slate-700">№</th>
-                                <th class="py-4 px-6 font-semibold text-sm border-b border-slate-700">Назва</th>
-                                <th class="py-4 px-6 font-semibold text-sm w-48 text-right border-b border-slate-700">Вартість, грн</th>
-                                <th class="py-4 px-6 font-semibold text-sm w-1/3 border-b border-slate-700">Примітка</th>
+                            <tr class="bg-gray-100 text-gray-800 border-b border-gray-300">
+                                <th class="p-4 font-bold text-center w-12">№</th>
+                                <th class="p-4 font-bold">Найменування статей витрат</th>
+                                <th class="p-4 font-bold text-center w-20">Кіл-ть</th>
+                                <th class="p-4 font-bold text-center w-24">Од. вим.</th>
+                                <th class="p-4 font-bold text-right w-32">Сума (грн)</th>
                             </tr>
                         </thead>
-                        <tbody class="divide-y divide-slate-100">
-                            <tr class="hover:bg-slate-50 transition-colors">
-                                <td class="py-4 px-6 text-center font-medium text-slate-500">1</td>
-                                <td class="py-4 px-6 font-semibold text-slate-900">Обладання Аеростар з автоматикою</td>
-                                <td class="py-4 px-6 text-right font-mono font-medium text-slate-900">7 040 495</td>
-                                <td class="py-4 px-6 text-sm text-slate-600">У вартості враховано страхування, гарантія на 1 рік з моменту запуску. Подальше обслуговування рахується за окремим договором.</td>
+                        <tbody class="divide-y divide-gray-200">
+                            <tr class="hover:bg-blue-50/50 transition-colors">
+                                <td class="p-4 text-center text-gray-500 font-medium align-top">1</td>
+                                <td class="p-4">
+                                    <div class="font-bold text-gray-900 text-base">Обладнання</div>
+                                    <div class="text-xs text-gray-500 mt-1 leading-relaxed">Припливно-витяжна установка Aerostar EcoStar 1500 EC X+Bypass NR</div>
+                                </td>
+                                <td class="p-4 text-center font-medium align-top">1</td>
+                                <td class="p-4 text-center text-gray-500 align-top">компл.</td>
+                                <td class="p-4 text-right font-bold text-gray-900 text-lg align-top">321 000</td>
                             </tr>
-                            <tr class="hover:bg-slate-50 transition-colors">
-                                <td class="py-4 px-6 text-center font-medium text-slate-500">2</td>
-                                <td class="py-4 px-6 font-semibold text-slate-900">Повітропроводи утеплені в окожушці</td>
-                                <td class="py-4 px-6 text-right font-mono font-medium text-slate-900">707 500</td>
-                                <td class="py-4 px-6 text-sm text-slate-600">Попередньо приймаємо площу 200 м.кв внутрішньої поверхні (1200 за квадрат)+ мінвата Lamella Mat 50 мм 250 квадратів (550 за квадрат) + окожушко 300 м.кв. (1100 за квадрат). З урахуванням шинорейки, ущільнювача, герметика і т.п.</td>
+                            <tr class="hover:bg-blue-50/50 transition-colors">
+                                <td class="p-4 text-center text-gray-500 font-medium align-top">2</td>
+                                <td class="p-4">
+                                    <div class="font-bold text-gray-900 text-base">Матеріали</div>
+                                    <div class="text-xs text-gray-500 mt-1 leading-relaxed">Оцинковка, решітки, ізоляція, кріплення, монтажний набір, інше.</div>
+                                </td>
+                                <td class="p-4 text-center font-medium align-top">1</td>
+                                <td class="p-4 text-center text-gray-500 align-top">компл.</td>
+                                <td class="p-4 text-right font-bold text-gray-900 text-lg align-top">109 000</td>
                             </tr>
-                            <tr class="hover:bg-slate-50 transition-colors">
-                                <td class="py-4 px-6 text-center font-medium text-slate-500">3</td>
-                                <td class="py-4 px-6 font-semibold text-slate-900">Метал на кріплення із кутика 40х40х3</td>
-                                <td class="py-4 px-6 text-right font-mono font-medium text-slate-900">200 000</td>
-                                <td class="py-4 px-6 text-sm text-slate-600">Вартість орієнтовна, адже ще буде обговорюватися щодо дизайну і загальної технології кріплення. В даній ціні враховано метал + виварення конструкції.</td>
+                            <tr class="hover:bg-blue-50/50 transition-colors">
+                                <td class="p-4 text-center text-gray-500 font-medium align-top">3</td>
+                                <td class="p-4">
+                                    <div class="font-bold text-gray-900 text-base">Проектна документація</div>
+                                    <div class="text-xs text-gray-500 mt-1 leading-relaxed">Розробка проекту, розробка деталювання, паспортизація, технічний звіт.</div>
+                                </td>
+                                <td class="p-4 text-center font-medium align-top">1</td>
+                                <td class="p-4 text-center text-gray-500 align-top">послуга</td>
+                                <td class="p-4 text-right font-bold text-gray-900 text-lg align-top">25 000</td>
                             </tr>
-                            <tr class="hover:bg-slate-50 transition-colors">
-                                <td class="py-4 px-6 text-center font-medium text-slate-500">4</td>
-                                <td class="py-4 px-6 font-semibold text-slate-900">Кабельно-провідникова продукція та кабельні канали</td>
-                                <td class="py-4 px-6 text-right font-mono font-medium text-slate-900">150 000</td>
-                                <td class="py-4 px-6 text-sm text-slate-600">Дана ціна максимально орієнтовна. Вартість цих матеріалів по факту згідно виконавчої схеми за роздрібними цінами.</td>
-                            </tr>
-                            <tr class="hover:bg-slate-50 transition-colors">
-                                <td class="py-4 px-6 text-center font-medium text-slate-500">5</td>
-                                <td class="py-4 px-6 font-semibold text-slate-900">Монтажний набір</td>
-                                <td class="py-4 px-6 text-right font-mono font-medium text-slate-900">120 000</td>
-                                <td class="py-4 px-6 text-sm text-slate-600">Специфічні метізи, скотч фольгований, віброопори та багато іншого.</td>
-                            </tr>
-                            <tr class="hover:bg-slate-50 transition-colors">
-                                <td class="py-4 px-6 text-center font-medium text-slate-500">6</td>
-                                <td class="py-4 px-6 font-semibold text-slate-900">Розробка 3D візуалізації та ВІМ моделювання</td>
-                                <td class="py-4 px-6 text-right font-mono font-medium text-slate-900">30 000</td>
-                                <td class="py-4 px-6 text-sm text-slate-600">-</td>
-                            </tr>
-                            <tr class="hover:bg-slate-50 transition-colors">
-                                <td class="py-4 px-6 text-center font-medium text-slate-500">7</td>
-                                <td class="py-4 px-6 font-semibold text-slate-900">Аудит та використання наявних матеріалів</td>
-                                <td class="py-4 px-6 text-right font-mono font-medium text-slate-900">10 000</td>
-                                <td class="py-4 px-6 text-sm text-slate-600">Ретельна інвентаризація фасонних деталей, що вже є на об'єкті. По факту використання вартість цих деталей буде відмінусована від фінального кошторису.</td>
-                            </tr>
-                            <tr class="hover:bg-slate-50 transition-colors">
-                                <td class="py-4 px-6 text-center font-medium text-slate-500">8</td>
-                                <td class="py-4 px-6 font-semibold text-slate-900">Розробка деталювання</td>
-                                <td class="py-4 px-6 text-right font-mono font-medium text-slate-900">25 000</td>
-                                <td class="py-4 px-6 text-sm text-slate-600">Процес замовлення наявних деталей після етапу погодження і підтвердження.</td>
-                            </tr>
-                            <tr class="hover:bg-slate-50 transition-colors">
-                                <td class="py-4 px-6 text-center font-medium text-slate-500">9</td>
-                                <td class="py-4 px-6 font-semibold text-slate-900">Монтажні роботи повітропроводів на висоті</td>
-                                <td class="py-4 px-6 text-right font-mono font-medium text-slate-900">450 000</td>
-                                <td class="py-4 px-6 text-sm text-slate-600">Вартість монтажу 1 м.кв становить 900 грн. Попередньо приймаємо об'єм робіт на 500 м.кв. У вартість рахується площа поверхні повітропроводів та окожушко. Також у вартість входе монтаж і розробка кріплень.</td>
-                            </tr>
-                            <tr class="hover:bg-slate-50 transition-colors">
-                                <td class="py-4 px-6 text-center font-medium text-slate-500">10</td>
-                                <td class="py-4 px-6 font-semibold text-slate-900">Монтаж обладнання</td>
-                                <td class="py-4 px-6 text-right font-mono font-medium text-slate-900">300 000</td>
-                                <td class="py-4 px-6 text-sm text-slate-600">З залученням використання підіймальної техніки.</td>
-                            </tr>
-                            <tr class="hover:bg-slate-50 transition-colors">
-                                <td class="py-4 px-6 text-center font-medium text-slate-500">11</td>
-                                <td class="py-4 px-6 font-semibold text-slate-900">Пусконаладжувальні роботи</td>
-                                <td class="py-4 px-6 text-right font-mono font-medium text-slate-900">400 000</td>
-                                <td class="py-4 px-6 text-sm text-slate-600">Збір щита автоматики, його налаштування, балансування.</td>
-                            </tr>
-                            <tr class="hover:bg-slate-50 transition-colors">
-                                <td class="py-4 px-6 text-center font-medium text-slate-500">12</td>
-                                <td class="py-4 px-6 font-semibold text-slate-900">Оренда підіймальної техніки</td>
-                                <td class="py-4 px-6 text-right font-mono font-medium text-slate-900">60 000</td>
-                                <td class="py-4 px-6 text-sm text-slate-600">6 днів роботи крану для підйому обладнання та матеріалів.</td>
-                            </tr>
-                            <tr class="hover:bg-slate-50 transition-colors">
-                                <td class="py-4 px-6 text-center font-medium text-slate-500">13</td>
-                                <td class="py-4 px-6 font-semibold text-slate-900">Транспортні витрати</td>
-                                <td class="py-4 px-6 text-right font-mono font-medium text-slate-900">70 000</td>
-                                <td class="py-4 px-6 text-sm text-slate-600">Орієнтовна вартість. Включає доставку матеріалів та обладнання по Україні та логістика по місту.</td>
-                            </tr>
-                            <tr class="hover:bg-slate-50 transition-colors">
-                                <td class="py-4 px-6 text-center font-medium text-slate-500">14</td>
-                                <td class="py-4 px-6 font-semibold text-slate-900">Оренда будівельних лісів</td>
-                                <td class="py-4 px-6 text-right font-mono font-medium text-slate-900">20 000</td>
-                                <td class="py-4 px-6 text-sm text-slate-600">Будуть орендовані різні типи лісів від фасадних до вузьких.</td>
-                            </tr>
-                            <tr class="hover:bg-slate-50 transition-colors">
-                                <td class="py-4 px-6 text-center font-medium text-slate-500">15</td>
-                                <td class="py-4 px-6 font-semibold text-slate-900">Адміністративні витрати</td>
-                                <td class="py-4 px-6 text-right font-mono font-medium text-slate-900">300 000</td>
-                                <td class="py-4 px-6 text-sm text-slate-600">Авторський нагляд, розробка актів виконаних робіт, оптимізація робіт, бухгалтерські витрати, розробка таймінгів.</td>
-                            </tr>
-                            <tr class="hover:bg-slate-50 transition-colors">
-                                <td class="py-4 px-6 text-center font-medium text-slate-500">16</td>
-                                <td class="py-4 px-6 font-semibold text-slate-900">Залучення спеціаліста по опору матеріалів для прорахунку кріплень</td>
-                                <td class="py-4 px-6 text-right font-mono font-medium text-slate-900">60 000</td>
-                                <td class="py-4 px-6 text-sm text-slate-600">Розрахунок динамічних та статичних навантажень.</td>
+                            <tr class="hover:bg-blue-50/50 transition-colors">
+                                <td class="p-4 text-center text-gray-500 font-medium align-top">4</td>
+                                <td class="p-4">
+                                    <div class="font-bold text-gray-900 text-base">Транспортні витрати</div>
+                                    <div class="text-xs text-gray-500 mt-1 leading-relaxed">Логістика обладнання та матеріалів на об'єкт.</div>
+                                </td>
+                                <td class="p-4 text-center font-medium align-top">1</td>
+                                <td class="p-4 text-center text-gray-500 align-top">послуга</td>
+                                <td class="p-4 text-right font-bold text-gray-900 text-lg align-top">15 000</td>
                             </tr>
                         </tbody>
-                        <tfoot class="bg-brand-50 border-t-2 border-brand-200">
-                            <tr>
-                                <td colspan="2" class="py-6 px-6 font-bold text-xl text-slate-900 text-right uppercase tracking-wide">Загальна вартість з ПДВ:</td>
-                                <td class="py-6 px-6 text-right font-mono font-bold text-2xl text-brand-600 whitespace-nowrap">9 942 995 ₴</td>
-                                <td></td>
+                        <tfoot>
+                            <tr class="bg-blue-600 text-white print:!bg-slate-800 print:!text-white print:border-t-2 print:border-gray-800">
+                                <td colspan="4" class="p-5 text-right text-lg font-bold uppercase tracking-wider">Загальна вартість:</td>
+                                <td class="p-5 text-right text-2xl font-bold whitespace-nowrap">470 000 <span class="text-base font-medium">грн (без ПДВ)*</span></td>
                             </tr>
                         </tfoot>
                     </table>
                 </div>
+                <p class="text-xs text-gray-500 mt-3 text-right font-medium">* Ціни можуть коригуватися в залежності від фінального архітектурного плану приміщення.</p>
             </div>
-        </div>
-    </section>
 
-    <!-- Terms and Footer -->
-    <footer class="bg-slate-900 text-slate-300 py-16 border-t border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-slate-800/50 border border-slate-700 rounded-2xl p-8 lg:p-10">
-                <div class="flex items-start gap-4">
-                    <div class="mt-1 flex-shrink-0">
-                        <i data-lucide="info" class="w-8 h-8 text-brand-400"></i>
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-bold text-white mb-4">Умови співпраці</h3>
-                        <p class="text-lg font-medium text-brand-300 mb-4">Формат співпраці: по договору.</p>
-                        <div class="space-y-3 text-slate-400">
-                            <p><strong class="text-white">Звертаю вашу Увагу!</strong> В договорі буде прописано етапи оплати в залежності від етапу виконаного обʼєму роботи.</p>
-                            <p>Ми зафіксовуємо за собою право зупинити виконання робіт у випадку припинення вчасного фінансування.</p>
-                        </div>
-                    </div>
-                </div>
+            <div class="print-break-inside-avoid mt-10 bg-blue-50/50 rounded-2xl p-8 border border-blue-100 shadow-sm">
+                <h3 class="text-xl font-bold mb-4 text-blue-900 flex items-center gap-3">
+                    <i class="fas fa-project-diagram text-blue-500 text-2xl"></i>
+                    5. Економічна доцільність розробки проєкту
+                </h3>
+                <p class="text-gray-700 leading-relaxed mb-3 text-justify">
+                    Дана вартість комерційної пропозиції базується на емпіричних розрахунках та технічному завданні, поставленому в усній формі. Через це поточні матеріали розраховані з певним запасом, і в кошторисі можуть бути закладені надлишкові деталі.
+                </p>
+                <p class="text-gray-700 leading-relaxed text-justify">
+                    При подальшій співпраці та виплаті авансу буде розроблено повноцінний проєкт. Це дозволить з високою точністю прорахувати специфікацію та кількість повітропроводів. <strong>Ми замовимо рівно ту кількість деталей, яка дійсно потрібна для цього об'єкту. Це забезпечить максимально ефективне використання коштів: ви не переплачуватимете за зайві елементи, що у підсумку гарантує суттєву економію.</strong>
+                </p>
             </div>
-            
-            <div class="mt-12 text-center text-sm text-slate-500 flex flex-col items-center justify-center">
-                <div class="w-12 h-1 bg-slate-700 rounded-full mb-6"></div>
-                <p>Дана пропозиція є конфіденційною інформацією.</p>
-            </div>
-        </div>
-    </footer>
 
-    <!-- Initialize Icons -->
-    <script>
-        lucide.createIcons();
-    </script>
+        </section>
+
+        <footer class="bg-slate-100 p-8 border-t border-gray-200 mt-4 rounded-b-xl flex flex-col md:flex-row justify-between items-center print-break-inside-avoid print:bg-white print:border-t-2">
+            <div class="mb-4 md:mb-0 text-center md:text-left">
+                <h4 class="font-bold text-gray-800 text-lg mb-1">З повагою, компанія «ПОК Вітряки»</h4>
+                <p class="text-sm text-gray-600 font-medium">Ваш надійний інженерний партнер</p>
+            </div>
+            <div class="text-center md:text-right text-gray-800 bg-white px-6 py-3 rounded-lg shadow-sm print:shadow-none print:border print:border-gray-200">
+                <p class="font-bold text-lg"><i class="fas fa-phone-alt text-blue-600 mr-2"></i> 063-744-6998</p>
+                <p class="text-sm text-gray-500 mt-1">Телефонуйте для обговорення деталей</p>
+            </div>
+        </footer>
+    </div>
 </body>
 </html>
 
-
-```
